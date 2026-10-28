@@ -1,0 +1,673 @@
+:root {
+  --green: #2f9e5d;
+  --green-dark: #1f7a45;
+  --ink: #1c1c1c;
+  --text: #24292e;
+  --line: #d9dde1;
+  --card: #ffffff;
+  --radius-card: 32px;
+  --radius-box: 18px;
+  --font: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  padding: 56px 24px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  font-family: var(--font);
+  color: var(--text);
+  background-color: #d8ead3;
+  background-image:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(255, 255, 255, 0.85) 0 12%,
+      transparent 46%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(255, 255, 255, 0.7) 0 10%,
+      transparent 44%
+    ),
+    radial-gradient(
+      circle at 80% 84%,
+      rgba(255, 255, 255, 0.75) 0 14%,
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 18% 88%,
+      rgba(255, 255, 255, 0.6) 0 12%,
+      transparent 44%
+    ),
+    radial-gradient(circle at 50% 40%, #e8f3e1 0%, #cfe4c6 55%, #c3dcba 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.5) 0px,
+    rgba(255, 255, 255, 0.5) 2px,
+    rgba(255, 255, 255, 0) 2px,
+    rgba(255, 255, 255, 0) 6px
+  );
+}
+
+.logo-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 64px;
+  padding: 26px 60px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 10px 26px rgba(31, 92, 52, 0.07);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover,
+.logo:focus-visible {
+  opacity: 0.8;
+}
+
+/* --- Logo gambar (dari folder img) --- */
+.logo__img {
+  display: block;
+  object-fit: contain;
+  width: auto;
+  height: auto;
+}
+
+.logo__img--pradita {
+  max-height: 46px;
+  max-width: 210px;
+}
+
+/* Logo BEM sudah dipangkas & dibuat transparan (logoBEM-trim.png),
+   jadi bisa tampil langsung tanpa kotak latar. */
+.logo__img--bem {
+  max-height: 52px;
+  max-width: 96px;
+}
+
+/* =========================================================
+   Card Konten
+   ========================================================= */
+
+.content-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1050px;
+  padding: 62px 60px 54px;
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 46px rgba(31, 92, 52, 0.09);
+}
+
+.title {
+  margin: 0 0 26px;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.paragraph {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text);
+}
+
+.paragraph strong {
+  font-weight: 700;
+}
+
+/* --- Rules --- */
+.rules {
+  margin-top: 26px;
+}
+
+.rules-title {
+  margin: 0 0 10px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.rules-list {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.rules-list li {
+  margin-bottom: 6px;
+  padding-left: 2px;
+}
+
+.rules-list li::marker {
+  font-weight: 500;
+}
+
+.rules-list strong {
+  font-weight: 700;
+}
+
+/* --- Divider --- */
+.divider {
+  width: 62%;
+  max-width: 430px;
+  height: 1px;
+  margin: 30px auto;
+  border: 0;
+  background: var(--line);
+}
+
+/* --- Zoom note --- */
+.zoom-note {
+  margin: 0 auto;
+  max-width: 470px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.75;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1b1b1b;
+}
+
+/* --- Countdown --- */
+.countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.countdown-box {
+  display: grid;
+  place-items: center;
+  width: 98px;
+  height: 86px;
+  border-radius: var(--radius-box);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(31, 92, 52, 0.1);
+  font-size: 42px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: var(--green);
+}
+
+.countdown-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: #4a6b58;
+}
+
+/* --- Socials --- */
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--green);
+  transition:
+    transform 0.18s ease,
+    color 0.18s ease;
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Utility
+   ========================================================= */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   Card Zoom
+   ========================================================= */
+
+.zoom-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1050px;
+  padding: 40px 46px 46px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(31, 92, 52, 0.1);
+}
+
+.zoom-card__title {
+  margin: 0 0 26px;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ink);
+}
+
+.zoom-card__info {
+  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.zoom-card__row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15.5px;
+  color: var(--ink);
+}
+
+.zoom-card__row dt {
+  font-weight: 400;
+}
+
+.zoom-card__row dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* =========================================================
+   Tombol
+   ========================================================= */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 17px 24px;
+  border: 0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition:
+    filter 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  filter: brightness(1.06);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn__icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.btn--green {
+  background: #6cbf43;
+}
+
+.btn--orange {
+  background: #e8825c;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   Preview VBG Peserta
+   ========================================================= */
+
+.vbg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.vbg__frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: 2px solid #1b1b1b;
+  border-radius: 16px;
+  background-color: #f09a6a;
+  background-image:
+    radial-gradient(circle at 18% 30%, #fbd9b6 0 14%, transparent 42%),
+    radial-gradient(circle at 62% 72%, #fde3c8 0 16%, transparent 46%),
+    radial-gradient(circle at 88% 34%, #f7b489 0 12%, transparent 40%),
+    radial-gradient(circle at 34% 88%, #f6b189 0 14%, transparent 44%),
+    linear-gradient(150deg, #f5a273 0%, #f28f63 40%, #f4a878 72%, #f7be95 100%);
+  box-shadow: inset 0 0 90px rgba(255, 255, 255, 0.35);
+}
+
+/* sapuan kuas dekoratif */
+.vbg__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    repeating-linear-gradient(
+      118deg,
+      rgba(255, 255, 255, 0.16) 0 2px,
+      rgba(255, 255, 255, 0) 2px 14px
+    ),
+    repeating-linear-gradient(
+      62deg,
+      rgba(255, 240, 225, 0.22) 0 3px,
+      rgba(255, 240, 225, 0) 3px 18px
+    );
+}
+
+.vbg__badges {
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vbg__badge {
+  display: grid;
+  place-items: center;
+  padding: 3px 6px;
+  border-radius: 2px;
+  font-size: 6.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.vbg__badge--pradita {
+  background: rgba(255, 255, 255, 0.85);
+  color: #3d6b4f;
+}
+
+.vbg__badge--bem {
+  background: #fff;
+  color: #b34a34;
+}
+
+.vbg__participant {
+  position: absolute;
+  top: 4%;
+  right: 3%;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 26px;
+  transform: rotate(-4deg);
+  border-radius: 3px;
+  background: #c0392b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.vbg__participant-strip {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #f8d78a;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.vbg__mark {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  font-size: 19px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: #b8342a;
+}
+
+.vbg__mark em {
+  font-style: italic;
+  font-weight: 800;
+  color: #c0392b;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .logo-card {
+    padding: 22px 32px;
+  }
+
+  .content-card {
+    padding: 46px 34px 42px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .divider {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .countdown {
+    gap: 16px;
+  }
+
+  .countdown-box {
+    width: 84px;
+    height: 76px;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 32px 16px 64px;
+    gap: 20px;
+  }
+
+  .logo-card {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 22px 24px;
+  }
+
+  .logo__img--pradita {
+    max-height: 38px;
+    max-width: 176px;
+  }
+
+  .logo__img--bem {
+    max-height: 44px;
+    max-width: 80px;
+  }
+
+  .content-card {
+    padding: 34px 22px 32px;
+    border-radius: 24px;
+  }
+
+  .title {
+    font-size: 27px;
+    margin-bottom: 18px;
+  }
+
+  .paragraph,
+  .rules-list {
+    font-size: 15px;
+  }
+
+  .zoom-note {
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .countdown-box {
+    width: 66px;
+    height: 62px;
+    font-size: 26px;
+    border-radius: 14px;
+  }
+
+  .countdown-label {
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+  }
+
+  .socials {
+    gap: 28px;
+  }
+
+  .zoom-card {
+    padding: 26px 20px 24px;
+    border-radius: 18px;
+  }
+
+  .zoom-card__title {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .zoom-card__info {
+    margin-bottom: 22px;
+  }
+
+  .zoom-card__row {
+    font-size: 13.5px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    padding: 15px 16px;
+  }
+
+  .vbg {
+    gap: 18px;
+  }
+
+  .vbg__frame {
+    border-radius: 12px;
+  }
+
+  .vbg__badge {
+    font-size: 5px;
+    padding: 2px 4px;
+  }
+
+  .vbg__participant {
+    width: 62px;
+    height: 20px;
+  }
+
+  .vbg__participant-strip {
+    font-size: 6.5px;
+  }
+
+  .vbg__mark {
+    font-size: 13px;
+  }
+}
