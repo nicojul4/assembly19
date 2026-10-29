@@ -4,6 +4,7 @@ import assemblyLogo from "../img/logo Assembly19-transparent.png";
 import assemblyPoster from "../img/poster assembly19.jpg";
 import bemLogo from "../img/logoBEM-trim.png";
 import praditaLogo from "../img/pradita-university.png";
+import participantVirtualBackground from "../img/virtual background peserta.png";
 
 const EVENT_DATE = new Date("2026-10-30T15:30:00+07:00").getTime();
 const MINIMUM_PRELOADER_TIME = 650;
@@ -270,18 +271,19 @@ function VirtualBackground() {
       </h2>
       <div
         className="vbg__frame"
-        role="img"
-        aria-label="Preview VBG peserta Assembly BEM Pradita University"
       >
-        <div className="vbg__badges" aria-hidden="true" />
-        <span className="vbg__mark" aria-hidden="true">
-          Assembly <em>#19</em>
-        </span>
-        <span className="vbg__coming-soon" aria-hidden="true">
-          COMING SOON
-        </span>
+        <img
+          className="vbg__image"
+          src={participantVirtualBackground}
+          alt="Virtual background peserta Assembly #19"
+        />
       </div>
-      <a className="btn btn--orange" href="#" download>
+      <a
+        className="btn btn--orange"
+        href="https://drive.google.com/file/d/1_0kpIm-GdchLtXA4Ja_is0Cs_v_aI_y2/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           className="btn__icon"
           viewBox="0 0 24 24"
