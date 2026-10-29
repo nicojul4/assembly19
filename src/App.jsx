@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import assemblyLogo from "../img/logo Assembly19-transparent.png";
-import assemblyPoster from "../img/poster assembly19.jpg";
+import assemblyPoster from "../img/Poster Potrait.png";
 import bemLogo from "../img/logoBEM-trim.png";
 import praditaLogo from "../img/pradita-university.png";
 import participantVirtualBackground from "../img/virtual background peserta.png";
@@ -171,8 +171,21 @@ function MainContent({ countdown }) {
         </strong>
       </p>
       <p className="paragraph">
-        Narasumber keren kita: 🎙️ Unit Perlindungan Perempuan dan Anak (PPA) |
-        Sat Reskrim Polres Tangerang Selatan
+        🎙️ <strong>Speaker:</strong> Abdurrochman Ismail, S.H. (PPA Sat Reskrim
+        Polres Tangerang Selatan)
+        <br />
+        🎙️ <strong>MC:</strong> Mark &amp; Keisya
+      </p>
+      <p className="paragraph">
+        📍 <strong>Hybrid Event:</strong>
+        <br />
+        Offline: Auditorium 1, Gedung 1 Universitas Pradita
+        <br />
+        Online: Zoom Meeting
+        <br />
+        🗓️ Jumat, 30 Oktober 2026
+        <br />
+        ⏰ 15.30 - 17.40 WIB
       </p>
       <p className="paragraph">Di sesi kali ini, kita bakal kupas tuntas:</p>
       <p className="paragraph">
