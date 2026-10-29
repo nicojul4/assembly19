@@ -57,6 +57,13 @@ function PosterIntro({ visible, leaving, onNext }) {
         alt="Poster Assembly 19: Beyond the Boundaries"
         className="poster-intro__image"
       />
+      <a
+        className="poster-intro__tour"
+        href="?view=campus-tour"
+        tabIndex={visible ? 0 : -1}
+      >
+        Lihat lokasi Auditorium <span aria-hidden="true">↗</span>
+      </a>
       <button
         className="poster-intro__next"
         type="button"
@@ -200,6 +207,14 @@ function MainContent({ countdown }) {
         Jangan sampai kelewatan ya! Mari ciptakan lingkungan kampus yang aman,
         saling menghargai, dan suportif bersama-sama 💙
       </p>
+
+      <a className="campus-tour-link" href="?view=campus-tour">
+        <span className="campus-tour-link__icon" aria-hidden="true">↗</span>
+        <span>
+          <strong>Lihat lokasi Auditorium 1</strong>
+          <small>Jelajahi kampus Pradita dan buka petunjuk arah</small>
+        </span>
+      </a>
 
       <section className="rules">
         <h2 className="rules-title">Rules :</h2>
